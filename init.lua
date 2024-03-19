@@ -468,6 +468,8 @@ require('lazy').setup({
         -- tsserver = {},
         --
 
+        intelephense = {},
+
         lua_ls = {
           -- cmd = {...},
 
