@@ -295,7 +295,7 @@ require('lazy').setup({
             return vim.list_extend(args, { '--hidden', '--no-ignore' })
           end,
         }
-      end, { desc = '[S]earch current [W]ord ' })
+      end, { desc = '[S]earch current [W]ord in all files' })
 
       vim.keymap.set('n', '<leader>sW', function()
         builtin.grep_string {
@@ -738,11 +738,6 @@ require('lazy').setup({
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
-  },
-  {
-    'numToStr/Comment.nvim',
-    opts = {},
-    lazy = false,
   },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
