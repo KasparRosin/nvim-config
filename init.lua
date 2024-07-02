@@ -485,8 +485,6 @@ require('lazy').setup({
         -- tsserver = {},
         --
 
-        phpactor = {},
-
         lua_ls = {
           -- cmd = {...},
 
