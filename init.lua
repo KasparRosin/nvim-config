@@ -283,22 +283,13 @@ require('lazy').setup({
 
       vim.keymap.set('n', '<leader>sG', function()
         builtin.live_grep {
-          additional_args = function(args)
-            return vim.list_extend(args, { '--hidden', '--no-ignore' })
-          end,
+          additional_args = { '--hidden', '--no-ignore' },
+          prompt_title = 'Live Grep in All Files',
         }
       end, { desc = '[S]earch All by [G]rep' })
 
-      vim.keymap.set('n', '<leader>sG', function()
-        builtin.live_grep {
-          additional_args = function(args)
-            return vim.list_extend(args, { '--hidden', '--no-ignore' })
-          end,
-        }
-      end, { desc = '[S]earch current [W]ord in all files' })
-
       vim.keymap.set('n', '<leader>sF', function()
-        builtin.find_files { cwd = vim.fn.stdpath 'config', hidden = true, no_ignore = true }
+        builtin.find_files { hidden = true, no_ignore = true }
       end, { desc = '[S]earch Hidden [F]iles' })
 
       -- Shortcut for searching your Neovim configuration files
