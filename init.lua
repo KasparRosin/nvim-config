@@ -281,10 +281,30 @@ require('lazy').setup({
         }
       end, { desc = '[S]earch [/] in Open Files' })
 
+      vim.keymap.set('n', '<leader>sG', function()
+        builtin.live_grep {
+          additional_args = function(args)
+            return vim.list_extend(args, { '--hidden', '--no-ignore' })
+          end,
+        }
+      end, { desc = '[S]earch All by [G]rep' })
+
+      vim.keymap.set('n', '<leader>sG', function()
+        builtin.live_grep {
+          additional_args = function(args)
+            return vim.list_extend(args, { '--hidden', '--no-ignore' })
+          end,
+        }
+      end, { desc = '[S]earch current [W]ord in all files' })
+
+      vim.keymap.set('n', '<leader>sF', function()
+        builtin.find_files { cwd = vim.fn.stdpath 'config', hidden = true, no_ignore = true }
+      end, { desc = '[S]earch Hidden [F]iles' })
+
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
-      end, { desc = '[S]earch [N]eovim files' })
+      end, { desc = 'S]earch [N]eovim files' })
     end,
   },
   -- LSP Plugins
