@@ -49,6 +49,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     version = "v0.9.*",
+    event = { "BufReadPost", "BufNewFile" },
     opts = {
       signs = {
         add = { text = "+" },
@@ -62,11 +63,13 @@ return {
   {
     "numToStr/Comment.nvim",
     version = "v0.8.*",
+    event = { "BufReadPost", "BufNewFile" },
     opts = {},
   },
   {
     "echasnovski/mini.nvim",
     version = "v0.14.0",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("mini.ai").setup({ n_lines = 500 })
       require("mini.surround").setup()
@@ -75,6 +78,7 @@ return {
   {
     "tpope/vim-sleuth",
     version = "v2.0",
+    event = { "BufReadPost", "BufNewFile" },
   },
   {
     "kdheepak/lazygit.nvim",

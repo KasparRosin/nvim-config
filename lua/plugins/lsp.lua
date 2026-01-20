@@ -13,6 +13,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     version = "v1.*",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       { "williamboman/mason.nvim", version = "v1.*", config = true },
       { "williamboman/mason-lspconfig.nvim", version = "v1.*" },
@@ -77,6 +78,7 @@ return {
   {
     "stevearc/conform.nvim",
     version = "v8.*",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
       notify_on_error = false,
       format_on_save = {
