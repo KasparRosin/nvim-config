@@ -2,6 +2,6 @@ tags
 test.sh
 .luarc.json
 nvim
-
+.serena/
 spell/
 lazy-lock.json
